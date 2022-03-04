@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/reset.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>Event Listener</title>
+</head>
+<body>
+    <main>
+        <h1 class="title">Event Listener</h1>
+        <article>
+            <p>Nome: Pablo Vinicius Lins Damasceno</p>
+            <p>Tutor: Vini </p>
+            <p>Grupo: grupo 5</p>
+        </article>
+        <article class="disabled">
+            <h2 class="title">O que são Event Listeners?</h2>
+            <ul>
+                <li>
+                    Event Listeners são procedimentos ou funções em um programa que
+                    esperam um certo evento acontecer.
+                </li>
+                <li>
+                    Os event listeners trabalhados nessa apresentação serão divididos
+                    em duas categorias principais: mouse events e keyboard events.
+                </li>
+            </ul>
+        </article>
+        <article class="disabled">
+            <h2 class="title">Mouse Events</h2>
+            <p>Eventos de mouse são eventos acionados assim que o usuário
+                interage na página com o seu mouse. Os principais eventos 
+                utilizados são:
+                <b>click</b>, <b>dbclick</b>, <b>mouseup</b> e <b>mousedown</b>.
+            </p>
+
+            <h2 class="subtitle">Mouse Events vs onclick</h2>
+            <p>Embora o onclick e o event listener possuam a mesma finalidade,
+                existem diferenças cruciais entre eles.
+            </p>
+            <div class="double-list">
+                <div>
+                    <h2 class="subtitle">Mouse events</h2>
+                    <ul>
+                        <li>só pode ser adicionado por script</li>
+                        <li>pode acionar vários eventos por vez</li>
+                        <li>versões antigas de alguns browsers usam attachEvent ao invés de eventListener</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="subtitle">Onclick</h2>
+                    <ul>
+                        <li>Pode ser adicionado como atributo no HTML</li>
+                        <li>só pode acionar um único evento</li>
+                        <li>funciona em todos os browsers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="subtitle">Exemplos</h2>
+            <!-- <button>Clique Uma vez!</button> -->
+        </article>
+        <button>Iniciar Apresentação</button>
+    </main>
+</body>
+</html>

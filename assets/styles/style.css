@@ -111,3 +111,31 @@ button:hover{
 .disabled {
     display: none;
 }
+
+.animation-window{
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--bg-color);
+    animation-name: animation-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.animation-down-class{
+    animation-name: animation-down;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animation-up {
+    from {top: 100%;}
+    to {top: 5rem;}
+}
+
+@keyframes animation-down {
+    from {top: 5rem;}
+    to {top: 100%;}
+}

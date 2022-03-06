@@ -14,7 +14,7 @@
 <body>
     <main>
         <h1 class="title">Event Listener</h1>
-        <article class="disabled">
+        <article>
             <p>Nome: Pablo Vinicius Lins Damasceno</p>
             <p>Tutor: Vini </p>
             <p>Grupo: grupo 5</p>
@@ -66,7 +66,7 @@
                 <div><p>Clique em mim!</p></div>
             </div>
         </article>
-        <article>
+        <article class="disabled">
             <h2 class="title">Mouse Events</h2>
             <p>Eventos de mouse são eventos acionados assim que o usuário
                 interage na página com o seu mouse. Os principais eventos 
@@ -107,10 +107,24 @@
                 <div></div>
             </div>
         </article>
+        <article class="canvas-article disabled">
+            <div>
+                <div>
+                    <ion-icon name="brush-outline"></ion-icon>
+                    <input class="color" value="#ACD3ED" type="color">
+                </div>
+                <h3 class="subtitle">Draw me!</h3>
+                <ion-icon class="clear" name="trash-outline"></ion-icon>
+            </div>
+            <canvas id="canvas">
+            </canvas>
+        </article>
         <button class="primary">Iniciar Apresentação</button>
         <div class="black-window"></div>
     </main>
 
     <script src="assets/scripts/main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

@@ -177,6 +177,50 @@ button:hover{
     margin-top: 10px;
 }
 
+.canvas-article{
+    background-color: transparent;
+    height: 550px;
+}
+
+.canvas-article > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 100;
+    width: 93.3%;
+    height: 60px;
+    background: var(--bg-color);
+    border: 5px solid var(--font-pink);
+    border-radius: 10px;
+}
+
+.canvas-article > div>div{
+    display: flex;
+    align-items: center;
+}
+canvas{
+    background-color: #eee;
+    position: fixed;
+    border: 5px solid var(--font-pink);
+    border-radius: 10px;
+}
+
+.color{
+    margin-left: 10px;
+    border: none;
+    background-color: var(--font-pink);
+    border-radius: 5px;
+}
+
+.color:hover, .clear:hover{
+    cursor: pointer;
+}
+
+ion-icon{
+    font-size: 25px;
+    color: var(--font-pink);
+}
+
 @keyframes fade-in{
     from{opacity: 0;}
     to{opacity: 1;}

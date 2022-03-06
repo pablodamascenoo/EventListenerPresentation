@@ -78,3 +78,48 @@ buttonOnClickExample.onclick = ()=>{
     divOnClick.classList.add("fade")
     divOnClick.innerHTML = "<p>Segundo Evento</p>"
 }
+
+let clear = document.querySelector(".clear")
+let canvas = document.querySelector("canvas")
+let ctx = canvas.getContext('2d')
+let coord = {x:0, y:0}
+
+canvas.addEventListener("mouseup", stopDraw)
+canvas.addEventListener("mousedown", startDraw)
+clear.addEventListener("click", clearCanvas)
+resize();
+
+function resize() {
+  ctx.canvas.width = 700;
+  ctx.canvas.height = 500;
+}
+
+function startDraw(event) {
+    document.addEventListener('mousemove', draw);
+    reposition(event);
+}
+
+function reposition(event) {
+    var rect = canvas.getBoundingClientRect()
+    coord.x = event.x - rect.left;
+    coord.y = event.y - rect.top;
+}
+
+function stopDraw() {
+    document.removeEventListener('mousemove', draw);
+}
+
+function draw(event) {
+    ctx.beginPath();
+    ctx.lineWidth = 5;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = document.querySelector("input").value;
+    ctx.moveTo(coord.x, coord.y);
+    reposition(event);
+    ctx.lineTo(coord.x, coord.y);
+    ctx.stroke();
+}
+
+function clearCanvas(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}

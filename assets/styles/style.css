@@ -113,8 +113,8 @@ button:hover{
 }
 
 .animation-window{
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 100vh;
     bottom: 0;
     width: 100%;
     z-index: 100;
@@ -130,7 +130,7 @@ button:hover{
     animation-fill-mode: forwards;
 }
 
-.capture{
+.pink-div{
     width: 200px;
     height: 200px;
     border: 5px solid var(--font-pink);
@@ -142,7 +142,8 @@ button:hover{
     flex-direction: column;
 }
 
-.capture > div {
+.pink-div > div {
+    cursor: pointer;
     width: 75%;
     height: 50%;
     border: 5px solid var(--font-white);
@@ -150,18 +151,33 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 }
 
-.capture > div > p{
+.pink-div > div:hover{
+    transform: scale(1.1);
+}
+
+.pink-div > div > p{
     text-align: center;
 }
 
+.fade{
+    animation: fade-in 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
 @keyframes animation-up {
-    from {top: 100%;}
+    from {top: 100vh;}
     to {top: 5rem;}
 }
 
 @keyframes animation-down {
     from {top: 5rem;}
-    to {top: 100%;}
+    to {top: 100vh;}
 }

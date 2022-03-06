@@ -1,6 +1,6 @@
-let button = document.querySelector(".primary")
+let primaryButton = document.querySelector(".primary")
 
-button.addEventListener("click", ()=>{
+primaryButton.addEventListener("click", ()=>{
     let articles = [...document.querySelectorAll("article")]
     let window = document.querySelector(".black-window")
 
@@ -21,3 +21,16 @@ button.addEventListener("click", ()=>{
         }
     }
 })
+
+let captureDiv = document.querySelector(".capture")
+let innerCaptureDiv = captureDiv.querySelector("div")
+
+captureDiv.addEventListener("click", async function(){
+    alert("Eu venho do elemento pai")
+    innerCaptureDiv.querySelector("p").innerText = "Eu venho primeiro"
+}, true)
+
+innerCaptureDiv.addEventListener("click", ()=>{
+    alert("Eu venho do elemento filho")
+    innerCaptureDiv.querySelector("p").innerText = "Eu venho depois"
+}, true)

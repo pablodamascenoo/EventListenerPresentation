@@ -130,6 +130,32 @@ button:hover{
     animation-fill-mode: forwards;
 }
 
+.capture{
+    width: 200px;
+    height: 200px;
+    border: 5px solid var(--font-pink);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.capture > div {
+    width: 75%;
+    height: 50%;
+    border: 5px solid var(--font-white);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.capture > div > p{
+    text-align: center;
+}
+
 @keyframes animation-up {
     from {top: 100%;}
     to {top: 5rem;}

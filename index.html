@@ -14,7 +14,7 @@
 <body>
     <main>
         <h1 class="title">Event Listener</h1>
-        <article>
+        <article class="disabled">
             <p>Nome: Pablo Vinicius Lins Damasceno</p>
             <p>Tutor: Vini </p>
             <p>Grupo: grupo 5</p>
@@ -30,7 +30,31 @@
                     Os event listeners trabalhados nessa apresentação serão divididos
                     em duas categorias principais: mouse events e keyboard events.
                 </li>
+                <li>
+                    Para adicionar um event listener, é preciso utilizar 
+                    o método addEventListener para o elemento que vai ser escutado.
+                </li>
+                <li>
+                    O addEventListener possui 3 parâmetros: o tipo de evento, a função
+                    a ser executada e um boolean que indica se o evento será executado na fase
+                    de capture ou de bubbling
+                </li>
             </ul>
+        </article>
+        <article>
+            <h2 class="title">O que são Capture e bubbling phases?</h2>
+            <p>Ambos se tratam sobre como os eventos de mesmo tipo
+                irão se comportar em um sistema hierarquico.</p>
+            <h3 class="subtitle">Capture</h3>
+            <p>A fase de captura ocorre quando o terceiro argumento do 
+                addEventListener é dado como <b>true</b>, nela, os eventos 
+                ocorrem do elemento mais externo para o mais interno. por exemplo, 
+                esse quadrado rosa abaixo é pai do quadrado branco e ambos possuem
+                o addEventListener com o modo capture. 
+            </p>
+            <div class="capture">
+                <div><p>Clique em mim!</p></div>
+            </div>
         </article>
         <article class="disabled">
             <h2 class="title">Mouse Events</h2>

@@ -26,6 +26,9 @@ let captureDiv = document.querySelector(".capture")
 let innerCaptureDiv = captureDiv.querySelector("div")
 let bubblingDiv = document.querySelector(".bubbling")
 let innerBubblingDiv = bubblingDiv.querySelector("div")
+let buttonEventExample = document.querySelectorAll(".double-list")[1].firstElementChild
+let buttonOnClickExample = document.querySelectorAll(".double-list")[1].lastElementChild
+
 
 captureDiv.addEventListener("click", async function(){
     innerCaptureDiv.querySelector("p").innerHTML = "1º Elemento pai<br>"
@@ -44,3 +47,34 @@ innerBubblingDiv.addEventListener("click", ()=>{
     innerBubblingDiv.querySelector("p").innerHTML = "1º Elemento filho<br>"
     innerBubblingDiv.querySelector("p").classList.add("fade")
 }, false)
+
+buttonEventExample.addEventListener("click", ()=>{
+    let divEvent = buttonEventExample.parentNode.parentNode
+    .lastElementChild.firstElementChild
+
+    divEvent.classList.add("fade")
+    divEvent.innerHTML = "<p>Primeiro evento</p>"
+})
+
+buttonEventExample.addEventListener("click", ()=>{
+    let divEvent = buttonEventExample.parentNode.parentNode
+    .lastElementChild.firstElementChild
+
+    divEvent.innerHTML += "<p>Segundo evento</p>"
+})
+
+buttonOnClickExample.onclick = ()=>{
+    let divOnClick = buttonOnClickExample.parentNode.parentNode
+    .lastElementChild.lastElementChild
+
+    divOnClick.classList.add("fade")
+    divOnClick.innerHTML = "<p>Primeiro evento</p>"
+}
+
+buttonOnClickExample.onclick = ()=>{
+    let divOnClick = buttonOnClickExample.parentNode.parentNode
+    .lastElementChild.lastElementChild
+
+    divOnClick.classList.add("fade")
+    divOnClick.innerHTML = "<p>Segundo Evento</p>"
+}

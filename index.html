@@ -41,7 +41,7 @@
                 </li>
             </ul>
         </article>
-        <article>
+        <article class="disabled">
             <h2 class="title">O que são Capture e bubbling phases?</h2>
             <p>Ambos se tratam sobre como os eventos de mesmo tipo
                 irão se comportar em um sistema hierarquico.</p>
@@ -52,11 +52,21 @@
                 esse quadrado rosa abaixo é pai do quadrado branco e ambos possuem
                 o addEventListener com o modo capture. 
             </p>
-            <div class="capture">
+            <div class="capture pink-div">
+                <div><p>Clique em mim!</p></div>
+            </div>
+            <h3 class="subtitle">Bubbling</h3>
+            <p>A fase de borbulha ocorre quando o terceiro argumento do
+                addEventListener é dado como <b>false</b> que vem dessa forma
+                como padrão. Dessa forma, os eventos ocorrem do elemento mais interno
+                para o mais externo. Veja o exemplo abaixo que é semelhante ao anterior,
+                porém com um detalhe diferente, o addEventListener está com o modo bubbling.    
+            </p>
+            <div class="bubbling pink-div">
                 <div><p>Clique em mim!</p></div>
             </div>
         </article>
-        <article class="disabled">
+        <article>
             <h2 class="title">Mouse Events</h2>
             <p>Eventos de mouse são eventos acionados assim que o usuário
                 interage na página com o seu mouse. Os principais eventos 
@@ -88,7 +98,14 @@
             </div>
 
             <h2 class="subtitle">Exemplos</h2>
-            <!-- <button>Clique Uma vez!</button> -->
+            <div class="double-list">
+                <button>Event Listener</button>
+                <button>Onclick</button>
+            </div>
+            <div class="double-list event-example">
+                <div></div>
+                <div></div>
+            </div>
         </article>
         <button class="primary">Iniciar Apresentação</button>
         <div class="black-window"></div>

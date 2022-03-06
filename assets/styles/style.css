@@ -92,16 +92,18 @@ button{
     color: var(--font-white);
     font-family: 'Roboto';
     font-size: 1.1rem;
+    transition: 0.5s;
 }
 
 button:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .double-list{
     margin-top: 30px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .double-list li{
@@ -165,6 +167,14 @@ button:hover{
 .fade{
     animation: fade-in 1s;
     animation-fill-mode: forwards;
+}
+
+.event-example>div{
+    width: 128px;
+}
+
+.event-example>div>p{
+    margin-top: 10px;
 }
 
 @keyframes fade-in{

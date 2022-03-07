@@ -14,7 +14,7 @@
 <body>
     <main>
         <h1 class="title">Event Listener</h1>
-        <article >
+        <article class="disabled">
             <p>Nome: Pablo Vinicius Lins Damasceno</p>
             <p>Tutor: Vini </p>
             <p>Grupo: grupo 5</p>
@@ -37,8 +37,18 @@
                 <li>
                     O addEventListener possui 3 parâmetros: o tipo de evento, a função
                     a ser executada e um boolean que indica se o evento será executado na fase
-                    de capture ou de bubbling
+                    de capture ou de bubbling. element.addEventListener(<b>type</b>, <b>function</b>, <b>useCapture</b>)
                 </li>
+                <li>
+                    o addEventListener é uma função asíncrona, pois depende de que 
+                    um evento em específico ocorra para executar a sua função de 
+                    callback(função que só será executada dentro do fluxo da HOF).
+                </li>
+                <li>Como esperamos um certo evento ocorrer para executar o event listener,
+                    podemos tambem passar esse evento como um parâmetro para a nossa função de callback
+                    que será executada.
+                </li>
+
             </ul>
         </article>
         <article class="disabled">
@@ -63,6 +73,14 @@
                 porém com um detalhe diferente, o addEventListener está com o modo bubbling.    
             </p>
             <div class="bubbling pink-div">
+                <div><p>Clique em mim!</p></div>
+            </div>
+            <h3 class="subtitle">stopPropagation</h3>
+            <p>Como um evento ocorre em cascata e o outro em forma de borbulha, também podemos
+                impedir esses eventos se propagem. Por exemplo, se utilizarmos o metodo event.stopPropagation
+                na função de callback do elemento filho no exemplo acima, apenas o evento do elemento filho iria ocorrer. 
+            </p>
+            <div class="stop-propagation pink-div">
                 <div><p>Clique em mim!</p></div>
             </div>
         </article>
@@ -118,6 +136,21 @@
             </div>
             <canvas id="canvas">
             </canvas>
+        </article>
+        <article>
+            <h2 class="title">Keyboard Events</h2>
+            <p>Eventos de teclado são ativados de forma semelhante aos eventos de mouse:
+                keyup, keydown e keypress, porém, se você não especifica na função de callback
+                qual tecla está esperando, qualquer tecla irá acioná-la.
+            </p>
+            <h3 class="subtitle">Exemplo</h3>
+            <div class="hexa-color">
+                <div>
+                    <input type="text" placeholder="Digite um código hexadecimal de 6 digitos">
+                    <input type="color" class="color" disabled>
+                </div>
+                <p></p>
+            </div>
         </article>
         <button class="primary">Iniciar Apresentação</button>
         <div class="black-window"></div>

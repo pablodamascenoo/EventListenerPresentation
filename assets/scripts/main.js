@@ -32,11 +32,12 @@ let captureDiv = document.querySelector(".capture")
 let innerCaptureDiv = captureDiv.querySelector("div")
 let bubblingDiv = document.querySelector(".bubbling")
 let innerBubblingDiv = bubblingDiv.querySelector("div")
+let propagationDiv = document.querySelector(".stop-propagation")
+let innerPropagationDiv = propagationDiv.querySelector("div")
 let buttonEventExample = document.querySelectorAll(".double-list")[1].firstElementChild
 let buttonOnClickExample = document.querySelectorAll(".double-list")[1].lastElementChild
 
-
-captureDiv.addEventListener("click", async function(){
+captureDiv.addEventListener("click", ()=>{
     innerCaptureDiv.querySelector("p").innerHTML = "1º Elemento pai<br>"
     innerCaptureDiv.querySelector("p").classList.add("fade")
 }, true)
@@ -52,6 +53,16 @@ bubblingDiv.addEventListener("click", async function(){
 innerBubblingDiv.addEventListener("click", ()=>{
     innerBubblingDiv.querySelector("p").innerHTML = "1º Elemento filho<br>"
     innerBubblingDiv.querySelector("p").classList.add("fade")
+}, false)
+
+propagationDiv.addEventListener("click", ()=>{
+    innerPropagationDiv.querySelector("p").innerHTML += "2º Elemento pai"
+})
+
+innerPropagationDiv.addEventListener("click", (event)=>{
+    innerPropagationDiv.querySelector("p").innerHTML = "1º Elemento filho<br>"
+    innerPropagationDiv.querySelector("p").classList.add("fade")
+    event.stopPropagation()
 }, false)
 
 buttonEventExample.addEventListener("click", ()=>{
@@ -129,3 +140,22 @@ function draw(event) {
 function clearCanvas(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+let inputColor = document.querySelector(".hexa-color").firstElementChild.firstElementChild
+
+inputColor.addEventListener("keyup", ()=>{
+    let texto = document.querySelector(".hexa-color").lastElementChild
+    if(inputColor.value.length === 7 && inputColor.value[0]==="#"){
+        const regex = '^#[A-Fa-f0-9]{6}$'
+        if(inputColor.value.match(regex)){
+            texto.classList.remove("failed")
+            texto.classList.add("success")
+            texto.innerText = "O código está correto"
+            inputColor.parentNode.querySelector(".color").value = inputColor.value
+            return
+        }
+    }
+    texto.classList.remove("success")
+    texto.classList.add("failed")
+    texto.innerText = "O código está errado"
+})

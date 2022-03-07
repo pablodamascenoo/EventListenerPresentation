@@ -227,6 +227,43 @@ ion-icon{
     margin-top: 650px;
 }
 
+.hexa-color{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.hexa-color > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hexa-color input{
+    height: 50px;
+    background-color: var(--font-pink);
+    border-radius: 5px;
+}
+
+.hexa-color  input:first-of-type{
+    background-color: #fff;
+    border: 5px solid var(--font-pink);
+    width: 300px;
+}
+
+.success{
+    color: #00ab66;
+}
+
+.failed{
+    color: #b33a3a;
+}
+
+.success, .failed{
+    margin-top: 20px;
+}
+
 @keyframes fade-in{
     from{opacity: 0;}
     to{opacity: 1;}

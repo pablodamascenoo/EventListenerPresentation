@@ -15,6 +15,9 @@ primaryButton.addEventListener("click", ()=>{
                 if(articles[i].classList.contains("canvas-article")){
                     primaryButton.classList.remove("margin-canvas")
                 }
+                if(articles[i+1].classList.contains("fim")){
+                    primaryButton.classList.add("disabled")
+                }
                 articles[i].classList.toggle("disabled")
                 articles[i+1].classList.toggle("disabled")
                 window.classList.add("animation-down-class")

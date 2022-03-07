@@ -9,6 +9,12 @@ primaryButton.addEventListener("click", ()=>{
             window.classList.add("animation-window")
             setTimeout(()=>{
                 if(i===0) primaryButton.innerText = "Proximo"
+                if(articles[i+1].classList.contains("canvas-article")){
+                    primaryButton.classList.add("margin-canvas")
+                }
+                if(articles[i].classList.contains("canvas-article")){
+                    primaryButton.classList.remove("margin-canvas")
+                }
                 articles[i].classList.toggle("disabled")
                 articles[i+1].classList.toggle("disabled")
                 window.classList.add("animation-down-class")
